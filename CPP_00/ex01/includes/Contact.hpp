@@ -6,15 +6,15 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 16:47:39 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/08/21 18:46:57 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/08/22 22:34:59 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-class Contact
-{
+class Contact {
     private:
+        bool        isEmpty;
         std::string firstName;
         std::string lastName;
         std::string nickname;
@@ -22,16 +22,16 @@ class Contact
         std::string darkest;
 
     public:
-        Contact::Contact(string firstName, string lastName, string nickname, string phoneNum, string darkest);
-        std::string getFirstName(void);
-        std::string getLastName(void);
-        std::string getNickname(void);
-        std::string getPhoneNum(void);
-        std::string getDarkest(void);
-        string Contact::setFirstName(string firstName);
-        string Contact::setLastName(string lastName);
-        string Contact::setNickname(string nickname);
-        string Contact::setPhoneNum(string phoneNum);
-        string Contact::setDarkest(string darkest);
-
+                // Contact(std::string firstName, std::string lastName, std::string nickname, std::string phoneNum, std::string darkest);
+        Contact();
+        std::string  getFirstName(void);
+        std::string  getLastName(void);
+        std::string  getNickname(void);
+        std::string  getPhoneNum(void);
+        std::string  getDarkest(void);
+        void    setFirstName(std::string firstName);
+        void    setLastName(std::string lastName);
+        void    setNickname(std::string nickname);
+        void    setPhoneNum(std::string phoneNum);
+        void    setDarkest(std::string darkest);
 };

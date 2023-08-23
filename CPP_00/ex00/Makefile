@@ -6,15 +6,20 @@
 #    By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 16:20:50 by jlucas-s          #+#    #+#              #
-#    Updated: 2023/08/21 16:42:04 by jlucas-s         ###   ########.fr        #
+#    Updated: 2023/08/22 18:44:39 by jlucas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= 
+NAME		= megaphone
 
-OBJS_DIR	= obj
+GREEN		= \033[1;32m 
+YELLOW		= \033[1;33m 
+RED			= \033[1;31m 
+NOCOLOR		= \033[0m
 
-SRCS		= .cpp
+OBJS_DIR	= objects
+
+SRCS		= megaphone.cpp
 OBJS		= $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
 CC			= c++
@@ -23,17 +28,22 @@ CFLAGS		= -Wall -Wextra -Werror -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@ echo "$(YELLOW)Compiling...$(NOCOLOR)"
 	@ $(CC) $(CFLAGS) $(OBJS) -o $@
+	@ echo "$(GREEN)Successfully compiled!$(NOCOLOR)"
 
 $(OBJS_DIR)/%.o: %.cpp
+	@ echo "$(YELLOW)Linking...$(NOCOLOR)"
 	@ mkdir -p $(OBJS_DIR)
 	@ $(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+	@ echo "$(RED)Cleaning...$(NOCOLOR)"
 	@ rm -rf $(OBJS_DIR)
 
 fclean: clean
-	@ rm $(NAME)
+	@ echo "$(RED)Fcleaning...$(NOCOLOR)"
+	@ rm -f $(NAME)
 
 re: fclean all
 	

@@ -6,15 +6,24 @@
 #    By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 16:20:50 by jlucas-s          #+#    #+#              #
-#    Updated: 2023/08/21 16:40:28 by jlucas-s         ###   ########.fr        #
+#    Updated: 2023/08/22 19:48:14 by jlucas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= megaphone
+NAME		= phonebook
 
-OBJS_DIR	= obj
+GREEN		= \033[1;32m 
+YELLOW		= \033[1;33m 
+RED			= \033[1;31m 
+NOCOLOR		= \033[0m
 
-SRCS		= megaphone.cpp
+INC			= -I ./includes 
+
+SRCS		=	src/main.cpp		\
+				src/Contact.cpp		\
+				src/PhoneBook.cpp	\
+
+OBJS_DIR	= ./objects
 OBJS		= $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
 CC			= c++
@@ -23,17 +32,22 @@ CFLAGS		= -Wall -Wextra -Werror -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@ echo "$(YELLOW)Compiling...$(NOCOLOR)"
 	@ $(CC) $(CFLAGS) $(OBJS) -o $@
+	@ echo "$(GREEN)Successfully compiled!$(NOCOLOR)"
 
 $(OBJS_DIR)/%.o: %.cpp
-	@ mkdir -p $(OBJS_DIR)
-	@ $(CC) $(CFLAGS) -c $< -o $@
+	@ echo "$(YELLOW)Linking...$(NOCOLOR)"
+	@ mkdir -p $(dir $@)
+	@ $(CC) $(INC) $(CFLAGS) -c $< -o $@
 
 clean:
+	@ echo "$(RED)Cleaning...$(NOCOLOR)"
 	@ rm -rf $(OBJS_DIR)
 
 fclean: clean
-	@ rm $(NAME)
+	@ echo "$(RED)Fcleaning...$(NOCOLOR)"
+	@ rm -f $(NAME)
 
 re: fclean all
 	
