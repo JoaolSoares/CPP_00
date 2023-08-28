@@ -6,14 +6,13 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 16:47:42 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/08/21 18:46:52 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/08/28 14:43:17 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-using namespace std;
 
-Contact::Contact(string firstName, string lastName, string nickname, string phoneNum, string darkest) {
+Contact::Contact(std::string firstName, std::string lastName, std::string nickname, std::string phoneNum, std::string darkest) {
     this->firstName     = firstName;
     this->lastName      = lastName;
     this->nickname      = nickname;
@@ -21,34 +20,34 @@ Contact::Contact(string firstName, string lastName, string nickname, string phon
     this->darkest       = darkest;
 }
 
-string Contact::getFirstName(void) {
+std::string Contact::getFirstName(void) {
     return this->firstName;
 }
-string Contact::getLastName(void) {
+std::string Contact::getLastName(void) {
     return this->lastName;
 }
-string Contact::getNickname(void) {
+std::string Contact::getNickname(void) {
     return this->nickname;
 }
-string Contact::getPhoneNum(void) {
+std::string Contact::getPhoneNum(void) {
     return this->phoneNum;
 }
-string Contact::getDarkest(void) {
+std::string Contact::getDarkest(void) {
     return this->darkest;
 }
 
-string Contact::setFirstName(string firstName) {
+std::string Contact::setFirstName(std::string firstName) {
     this->firstName = firstName;
 }
-string Contact::setLastName(string lastName) {
+std::string Contact::setLastName(std::string lastName) {
     this->lastName = lastName;
 }
-string Contact::setNickname(string nickname) {
+std::string Contact::setNickname(std::string nickname) {
     this->nickname = nickname;
 }
-string Contact::setPhoneNum(string phoneNum) {
+std::string Contact::setPhoneNum(std::string phoneNum) {
     this->phoneNum = phoneNum;
 }
-string Contact::setDarkest(string darkest) {
+std::string Contact::setDarkest(std::string darkest) {
     this->darkest = darkest;
 }

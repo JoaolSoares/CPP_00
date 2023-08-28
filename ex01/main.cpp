@@ -6,32 +6,33 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:54:45 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/08/21 18:38:00 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/08/28 14:56:09 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-using namespace std;
+#include "PhoneBook.hpp"
 
 void menu(void) {
-	cout	<< "-------------------------"	<< endl
-			<< "|       PhoneBook       |"	<< endl
-			<< "-------------------------"	<< endl
-			<< "[ADD] Add a new contact"	<< endl
-			<< "[SEARCH] Search a contact"	<< endl
-			<< "[EXIT] Exit the PhoneBook"	<< endl
-			<< "-------------------------"	<< endl
-			<< "Option: ";
+	std::cout	<< "-------------------------"	<< std::endl
+				<< "|       PhoneBook       |"	<< std::endl
+				<< "-------------------------"	<< std::endl
+				<< "[ADD] Add a new contact"	<< std::endl
+				<< "[SEARCH] Search a contact"	<< std::endl
+				<< "[EXIT] Exit the PhoneBook"	<< std::endl
+				<< "-------------------------"	<< std::endl
+				<< "Option: ";
 }
 
 int main(void) {
-	string opt;
+	std::string opt;
+	PhoneBook	phoneBook;
 
 	do
 	{
 		menu();
 
-		cin >> opt;
+		std::cin >> opt;
 		
 		if (opt == "ADD" || opt == "add") {
 			
@@ -40,10 +41,10 @@ int main(void) {
 			
 		}
 		else if (opt != "EXIT" && opt != "exit")
-			cout << "Error! Invalid Option" << endl;
+			std::cout << "Error! Invalid Option" << std::endl;
 
 	} while (opt != "EXIT" && opt != "exit");
 
-	cout << "Exiting..." << endl;
+	std::cout << "Exiting..." << std::endl;
 	return (0);
 }
