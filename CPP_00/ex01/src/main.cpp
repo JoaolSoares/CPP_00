@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:54:45 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/08/22 22:24:32 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/08/31 19:09:06 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,47 @@ void menu(void) {
 				<< "Option: ";
 }
 
+std::string getCin(void) {
+	std::string str;
+
+	std::getline(std::cin, str);
+	return (str);
+}
+
+Contact getContact(void) {
+	Contact contact;
+
+	std::cout << "-------------------------------" << std::endl;
+	std::cout << "    First name: "; contact.setFirstName(getCin());
+	std::cout << "     Last name: "; contact.setLastName(getCin());
+	std::cout << "      Nickname: "; contact.setNickname(getCin());
+	std::cout << "  Phone number: "; contact.setPhoneNum(getCin());
+	std::cout << "Darkest secret: "; contact.setDarkest(getCin());
+	
+	return (contact);
+}
+
 int main(void) {
-	std::string opt;
-	PhoneBook phoneBook;
+	std::string	opt;
+	PhoneBook	phoneBook;
+	Contact		newContact;;
 
 	do
 	{
 		menu();
 
-		std::cin >> opt;
+		std::getline(std::cin, opt);
 		
 		if (opt == "ADD" || opt == "add" || opt == "1") {
-			std::cout << "add in future" << std::endl;
+			newContact = getContact();
+			if (newContact.getCompleted()) {
+				std::cout << "saved contact!" << std::endl;
+				phoneBook.addContact(newContact);
+			}
+			else
+				std::cout << "Error, incorrect data entry" << std::endl;
 		}
 		else if (opt == "SEARCH" || opt == "search" || opt == "2") {
-			std::cout << "add in future" << std::endl;
 			phoneBook.listContacts();
 		}
 		else if (opt != "EXIT" && opt != "exit" && opt != "3")
