@@ -6,12 +6,14 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 18:49:30 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/08/31 19:14:29 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/08/31 19:38:38 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <string>
+
+int		PhoneBook::getNumContacts() { return this->num_contacts; };
 
 std::string PhoneBook::formatForList(std::string str) {
 	std::string ret;
@@ -45,20 +47,10 @@ void PhoneBook::listContacts(void) {
 					
 	}
 	std::cout	<< "--------------------------------------------" << std::endl;
-
-	std::cout << "index: ";
-	std::getline(std::cin, opt);
-
-	if ((opt[0] - '0') > 0 && (opt[0] - '0') <= num_contacts) {
-		std::cout	<< "--------------------------------------------" << std::endl;
-		contacts[opt[0] - '0' - 1].printContact();
-	} else {
-		std::cout	<< "Error, index out of range" << std::endl;
-	}
 }
 
 void	PhoneBook::addContact(Contact new_contact) {
-	if (this->num_contacts <= MAX_CONTACTS) {
+	if (this->num_contacts < MAX_CONTACTS) {
 		contacts[this->num_contacts] = new_contact;
 		this->num_contacts++;
 	}
@@ -69,4 +61,13 @@ void	PhoneBook::addContact(Contact new_contact) {
 		else
 			this->oldest = 0;
 	}
+}
+
+Contact PhoneBook::getContact(int index) {
+	if (index <= this->num_contacts)
+		return (contacts[index]);
+
+	std::cout	<< "Error, index out of range" << std::endl;
+	Contact contact;
+	return contact;
 }

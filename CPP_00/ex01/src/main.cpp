@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:54:45 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/08/31 19:09:06 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/08/31 19:35:21 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,15 @@ int main(void) {
 				std::cout << "Error, incorrect data entry" << std::endl;
 		}
 		else if (opt == "SEARCH" || opt == "search" || opt == "2") {
+			std::string i_opt;
 			phoneBook.listContacts();
+	
+			std::cout << "index: ";
+			std::getline(std::cin, i_opt);
+			if ((i_opt[0] - '0') <= phoneBook.getNumContacts())
+				phoneBook.getContact((i_opt[0] - '0') - 1).printContact();
+			else
+				std::cout << "Error, index out of range" << std::endl;
 		}
 		else if (opt != "EXIT" && opt != "exit" && opt != "3")
 			std::cout << "Error! Invalid Option" << std::endl;

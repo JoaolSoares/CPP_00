@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 18:49:27 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/08/31 19:14:46 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/08/31 19:44:08 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ class PhoneBook {
 
 	public:
 		void	listContacts(void);
+		Contact getContact(int index);
+		int		getNumContacts();
 		void	addContact(Contact new_contact);
 };
