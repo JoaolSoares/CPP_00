@@ -6,7 +6,7 @@
 #    By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 16:20:50 by jlucas-s          #+#    #+#              #
-#    Updated: 2023/08/22 19:48:14 by jlucas-s         ###   ########.fr        #
+#    Updated: 2023/08/31 20:31:29 by jlucas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,11 @@ YELLOW		= \033[1;33m
 RED			= \033[1;31m 
 NOCOLOR		= \033[0m
 
-INC			= -I ./includes 
+INC			= -I ./model
 
 SRCS		=	src/main.cpp		\
-				src/Contact.cpp		\
-				src/PhoneBook.cpp	\
+				model/Contact.cpp	\
+				model/PhoneBook.cpp	\
 
 OBJS_DIR	= ./objects
 OBJS		= $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
