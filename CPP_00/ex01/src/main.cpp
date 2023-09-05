@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:54:45 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/09/01 23:23:44 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/09/04 22:10:20 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ Contact getContact(void) {
 	std::cout << "  Phone number: "; contact.setPhoneNum(getStrCin());
 	std::cout << "Darkest secret: "; contact.setDarkest(getStrCin());
 	
+	if (contact.getFirstName().length()	> 30	||
+		contact.getLastName().length()	> 30	||
+		contact.getNickname().length()	> 30	||
+		contact.getPhoneNum().length()	> 15	||
+		contact.getDarkest().length()	> 30) {
+			contact.setFirstName("");
+		}
+
 	return (contact);
 }
 

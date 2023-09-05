@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 16:47:39 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/08/31 20:33:35 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/09/04 22:10:29 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Contact {
 		bool			isCompleted(void);
 
 	public:
-						Contact();
+						Contact(void);
 		void   			setFirstName(std::string firstName);
 		void   			setLastName(std::string lastName);
 		void   			setNickname(std::string nickname);

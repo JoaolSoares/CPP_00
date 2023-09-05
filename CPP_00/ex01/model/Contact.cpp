@@ -6,13 +6,13 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 16:47:42 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/08/31 21:15:43 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/09/04 22:09:47 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact() {
+Contact::Contact(void) {
     this->firstName = "";
     this->lastName  = "";
     this->nickname  = "";
@@ -20,7 +20,6 @@ Contact::Contact() {
     this->darkest   = "";
     this->completed = false;
 }
-
 
 std::string Contact::getFirstName(void) { return this->firstName;   }
 std::string Contact::getLastName(void)  { return this->lastName;    }
