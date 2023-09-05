@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 18:49:30 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/08/31 21:15:17 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/09/04 20:18:02 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ void PhoneBook::listContacts(void) {
 	}
 	for (int i = 0; i < this->num_contacts; i++) {
 		std::cout	<< "--------------------------------------------" << std::endl
-					<< "| ";
-		std::cout	<< i + 1;
-		std::cout	<< " | " + formatForList(contacts[i].getFirstName())
+					<< "| " << i + 1
+					<< " | " + formatForList(contacts[i].getFirstName())
 					<< " | " + formatForList(contacts[i].getLastName())
 					<< " | " + formatForList(contacts[i].getNickname()) + " |"
 					<< std::endl;
