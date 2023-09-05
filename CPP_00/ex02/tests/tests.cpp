@@ -12,10 +12,6 @@
 #include <functional>
 #include "Account.hpp"
 
-// int main(void) {
-// 	Account acc = Account(1000);
-// 	acc.displayAccountsInfos();
-// }
 
 int		main( void ) {
 
