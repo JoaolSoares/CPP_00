@@ -6,7 +6,7 @@
 #    By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 16:20:50 by jlucas-s          #+#    #+#              #
-#    Updated: 2023/09/04 23:30:01 by jlucas-s         ###   ########.fr        #
+#    Updated: 2023/09/05 00:14:45 by jlucas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ PURPLE		= \033[0;35m
 CYAN		= \033[0;36m
 NOCOLOR		= \033[0m
 
-INC			= -I ./models/includes
+INC			= -I ./classes/includes
 
 SRCS		= 	src/main.cpp					\
 
