@@ -6,24 +6,24 @@
 #    By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 16:20:50 by jlucas-s          #+#    #+#              #
-#    Updated: 2023/09/04 22:04:47 by jlucas-s         ###   ########.fr        #
+#    Updated: 2023/09/11 21:35:55 by jlucas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= phonebook
 
-GREEN		= \033[1;32m 
-YELLOW		= \033[1;33m 
-RED			= \033[1;31m 
+GREEN		= \033[1;32m
+YELLOW		= \033[1;33m
+RED			= \033[1;31m
 PURPLE		= \033[0;35m
 CYAN		= \033[0;36m
 NOCOLOR		= \033[0m
 
-INC			= -I ./model
+INC			= -I ./classes
 
-SRCS		=	src/main.cpp		\
-				model/Contact.cpp	\
-				model/PhoneBook.cpp	\
+SRCS		=	src/main.cpp			\
+				classes/Contact.cpp		\
+				classes/PhoneBook.cpp	\
 
 OBJS_DIR	= ./objects
 OBJS		= $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
