@@ -6,11 +6,12 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:54:45 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/09/04 22:10:20 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/09/11 22:52:06 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+// #include "options.cpp"
 
 void menu(void) {
 	std::cout	<< "-------------------------------"	<< std::endl
@@ -44,7 +45,7 @@ Contact getContact(void) {
 		contact.getLastName().length()	> 30	||
 		contact.getNickname().length()	> 30	||
 		contact.getPhoneNum().length()	> 15	||
-		contact.getDarkest().length()	> 30) {
+		contact.getDarkest().length()	> 30 ) {
 			contact.setFirstName("");
 		}
 
@@ -52,14 +53,15 @@ Contact getContact(void) {
 }
 
 int main(void) {
-	std::string	opt;
-	PhoneBook	phoneBook;
-	Contact		newContact;
+	PhoneBook		phoneBook;
+	Contact			newContact;
+	std::string		opt;
 
-	while (true)
+	while (true && std::cin)
 	{
 		menu();
 		std::getline(std::cin, opt);
+
 		if (opt == "EXIT" || opt == "exit" || opt == "3")
 			break;
 		else if (opt == "ADD" || opt == "add" || opt == "1") {
@@ -74,10 +76,10 @@ int main(void) {
 		}
 		else if (opt == "SEARCH" || opt == "search" || opt == "2") {
 			phoneBook.listContacts();
-	
+
 			std::cout << "index: ";
 			std::getline(std::cin, opt);
-			if ((opt[0] - '0') <= phoneBook.getNumContacts())
+			if ((opt[0] - '0' - 1) < phoneBook.getNumContacts() && (opt[0] - '0') > 0)
 				phoneBook.getContact((opt[0] - '0') - 1).printContact();
 			else
 				std::cout << "Error, index out of range" << std::endl;
