@@ -14,7 +14,8 @@
 #include <string>
 
 PhoneBook::PhoneBook(void) {
-	this->num_contacts = 0;
+	this->num_contacts	= 0;
+	this->oldest		= 0;
 }
 
 int		PhoneBook::getNumContacts() { return this->num_contacts; };
