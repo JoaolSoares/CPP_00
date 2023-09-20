@@ -6,11 +6,11 @@
 #    By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 16:20:50 by jlucas-s          #+#    #+#              #
-#    Updated: 2023/09/19 23:47:46 by jlucas-s         ###   ########.fr        #
+#    Updated: 2023/09/19 23:49:20 by jlucas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= harlTwo
+NAME		= harlFilter
 
 GREEN		= \033[1;32m
 YELLOW		= \033[1;33m
