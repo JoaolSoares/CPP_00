@@ -6,11 +6,11 @@
 #    By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 16:20:50 by jlucas-s          #+#    #+#              #
-#    Updated: 2023/10/05 21:53:59 by jlucas-s         ###   ########.fr        #
+#    Updated: 2023/09/11 22:41:57 by jlucas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= SlavTrap
+NAME		= phonebook
 
 GREEN		= \033[1;32m
 YELLOW		= \033[1;33m
@@ -21,16 +21,15 @@ NOCOLOR		= \033[0m
 
 INC			= -I ./classes/includes
 
-SRCS		= 	src/main.cpp			\
-				classes/ClapTrap.cpp	\
-				classes/ScavTrap.cpp	\
-
+SRCS		=	src/main.cpp			\
+				classes/Contact.cpp		\
+				classes/PhoneBook.cpp	\
 
 OBJS_DIR	= ./objects
 OBJS		= $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
 CC			= c++
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
@@ -40,21 +39,21 @@ $(NAME): $(OBJS)
 	@ echo "$(GREEN)Successfully compiled!$(NOCOLOR)"
 	@ echo ""
 	@ echo "${PURPLE}\
-\n/* ************************************************************************** */		\
-\n/*                                                                            */		\
-\n/*            :::      ::::::::                                               */		\
-\n/*          :+:      :+:    :+:                                               */		\
-\n/*        +:+ +:+         +:+               CPP Module 03 | $(notdir $(shell pwd))              */		\
-\n/*      +#+  +:+       +#+                                                    */		\
-\n/*    +#+#+#+#+#+   +#                                                        */		\
-\n/*         #+#    #+#           By: jlucas-s <jlucas-s@student.42sp.org.br>   */		\
-\n/*        ###   ########.fr                                                   */		\
-\n/*                                                                            */		\
-\n/* ************************************************************************** */\n	\
+\n/* ************************************************************************** */\
+\n/*                                                                            */\
+\n/*            :::      ::::::::                                               */\
+\n/*          :+:      :+:    :+:                                               */\
+\n/*        +:+ +:+         +:+               CPP Module 00 | ex01              */\
+\n/*      +#+  +:+       +#+                                                    */\
+\n/*    +#+#+#+#+#+   +#                                                        */\
+\n/*         #+#    #+#           By: jlucas-s <jlucas-s@student.42sp.org.br>   */\
+\n/*        ###   ########.fr                                                   */\
+\n/*                                                                            */\
+\n/* ************************************************************************** */\n\
 	${NOCOLOR}"
 	@ echo ""
 	@ echo "$(YELLOW)To run the project:$(NOCOLOR)"
-	@ echo "> ./$(NAME)"
+	@ echo "> ./phonebook"
 	@ echo ""
 	@ echo ""
 
