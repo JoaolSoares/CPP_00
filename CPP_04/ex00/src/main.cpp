@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 22:16:00 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/10/18 19:49:26 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:00:26 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 #include "WrongCat.hpp"
 
 int main(void) {
-	const AAnimal* meta = new AAnimal();
+	const Animal* meta = new Animal();
 	std::cout << std::endl;
-	const AAnimal* j = new Dog();
+	const Animal* j = new Dog();
 	std::cout << std::endl;
-	const AAnimal* i = new Cat();
+	const Animal* i = new Cat();
 
 	std::cout << std::endl;
 	

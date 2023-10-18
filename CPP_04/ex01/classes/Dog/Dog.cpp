@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:04:10 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/10/18 19:49:26 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:01:46 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Dog::Dog() : type("Dog"), brain(new Brain()) {
 	std::cout << "\033[1;34m[Dog]\033[0m    Default contructor called" << std::endl;	
 }
 
-Dog::Dog(const Dog &src) : AAnimal() {
+Dog::Dog(const Dog &src) : Animal() {
 	std::cout << "\033[1;34m[Dog]\033[0m    Copy contructor called" << std::endl;
 
 	*this = src;

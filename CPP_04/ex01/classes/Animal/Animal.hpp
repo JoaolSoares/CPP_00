@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 22:17:57 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/10/18 19:49:26 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:01:46 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 #include <iostream>
 
-class AAnimal {
+class Animal {
 	protected:
 		std::string type;
 		
 	public:
-		AAnimal();
-		AAnimal(const AAnimal &src);
-		virtual ~AAnimal();
+		Animal();
+		Animal(const Animal &src);
+		virtual ~Animal();
 
-		AAnimal &operator = (const AAnimal &obj);
+		Animal &operator = (const Animal &obj);
 
 		virtual std::string getType( void ) const;
 		
