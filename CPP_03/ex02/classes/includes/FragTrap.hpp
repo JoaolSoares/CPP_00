@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 15:45:27 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/08/31 19:17:11 by jlucas-s         ###   ########.fr       */
+/*   Created: 2023/10/04 21:05:14 by jlucas-s          #+#    #+#             */
+/*   Updated: 2023/10/05 22:09:00 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+
+#include "ClapTrap.hpp"
 #include <iostream>
 
-int main(int argc, char *argv[])
-{
-    if (argc == 1) {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return (0);
-    }
-    for (int i = 1; argv[i]; i++) {
-        for (int j = 0; argv[i][j]; j++)
-            std::cout << (char)std::toupper(argv[i][j]);
-    }
-    std::cout << std::endl;
+class FragTrap: public ClapTrap {
+	private:
 
-    return (0);
-}
+	public:
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap(const FragTrap &src);
+		~FragTrap();
+
+		FragTrap &operator = (const FragTrap &obj);
+
+		void highFivesGuys(void);
+
+};
+
+
+# endif

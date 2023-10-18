@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 18:49:27 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/09/18 18:56:28 by jlucas-s         ###   ########.fr       */
+/*   Created: 2023/10/04 22:02:16 by jlucas-s          #+#    #+#             */
+/*   Updated: 2023/10/05 02:16:21 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+# ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
+#include "ClapTrap.hpp"
 #include <iostream>
-#include "Contact.hpp"
 
-# define MAX_CONTACTS 8
-
-class PhoneBook {
+class ScavTrap: public ClapTrap {
 	private:
-		Contact		contacts[MAX_CONTACTS];
-		int			num_contacts;
-		int			oldest;
-		std::string	formatForList(std::string str);
 
 	public:
-				PhoneBook(void);
-		void	listContacts(void);
-		Contact getContact(int index);
-		int		getNumContacts();
-		void	addContact(Contact new_contact);
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &src);
+		~ScavTrap();
+
+		ScavTrap &operator = (const ScavTrap &obj);
+
+		void attack(const std::string& target);
+		void guardGate();
 };
 
-#endif
+# endif
