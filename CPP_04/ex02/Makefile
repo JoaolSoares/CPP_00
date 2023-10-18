@@ -6,11 +6,11 @@
 #    By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 16:20:50 by jlucas-s          #+#    #+#              #
-#    Updated: 2023/10/18 18:48:28 by jlucas-s         ###   ########.fr        #
+#    Updated: 2023/10/18 19:51:02 by jlucas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Polymorphism
+NAME		= Abstract
 
 GREEN		= \033[1;32m
 YELLOW		= \033[1;33m
@@ -19,18 +19,20 @@ PURPLE		= \033[0;35m
 CYAN		= \033[0;36m
 NOCOLOR		= \033[0m
 
-INC			=	-I classes/Animal		\
+INC			=	-I classes/AAnimal		\
 				-I classes/Dog			\
 				-I classes/Cat			\
 				-I classes/WrongAnimal	\
 				-I classes/WrongCat		\
+				-I classes/Brain		\
 
 SRCS		= 	src/main.cpp						\
-				classes/Animal/Animal.cpp			\
+				classes/AAnimal/AAnimal.cpp			\
 				classes/Dog/Dog.cpp					\
 				classes/Cat/Cat.cpp					\
 				classes/WrongAnimal/WrongAnimal.cpp	\
 				classes/WrongCat/WrongCat.cpp		\
+				classes/Brain/Brain.cpp				\
 
 
 

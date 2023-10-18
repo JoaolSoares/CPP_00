@@ -6,11 +6,11 @@
 #    By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 16:20:50 by jlucas-s          #+#    #+#              #
-#    Updated: 2023/10/18 18:48:28 by jlucas-s         ###   ########.fr        #
+#    Updated: 2023/10/18 17:47:42 by jlucas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Polymorphism
+NAME		= Brain
 
 GREEN		= \033[1;32m
 YELLOW		= \033[1;33m
@@ -24,6 +24,7 @@ INC			=	-I classes/Animal		\
 				-I classes/Cat			\
 				-I classes/WrongAnimal	\
 				-I classes/WrongCat		\
+				-I classes/Brain		\
 
 SRCS		= 	src/main.cpp						\
 				classes/Animal/Animal.cpp			\
@@ -31,6 +32,7 @@ SRCS		= 	src/main.cpp						\
 				classes/Cat/Cat.cpp					\
 				classes/WrongAnimal/WrongAnimal.cpp	\
 				classes/WrongCat/WrongCat.cpp		\
+				classes/Brain/Brain.cpp				\
 
 
 
