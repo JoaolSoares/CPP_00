@@ -6,12 +6,12 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:02:00 by jlucas-s          #+#    #+#             */
-/*   Updated: 2023/10/18 16:44:55 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:06:08 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-# ifndef WRONGWrongCAT_HPP
+# ifndef WRONGCAT_HPP
 # define WRONGCAT_HPP
 
 #include "WrongAnimal.hpp"
