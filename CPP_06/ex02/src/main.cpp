@@ -63,17 +63,17 @@ void	identify(Base* p) {
 
 void	identify(Base& p) {
 	try {
-		dynamic_cast<A&>(p);
+		A tmp = dynamic_cast<A&>(p);
 		std::cout << "A object" << std::endl;
 	}
 	catch (std::exception &e) {
 		try {
-			dynamic_cast<B&>(p);
+			B tmp = dynamic_cast<B&>(p);
 			std::cout << "B object" << std::endl;
 		}
 		catch (std::exception &e) {
 			try {
-				dynamic_cast<C&>(p);
+				C tmp = dynamic_cast<C&>(p);
 				std::cout << "C object" << std::endl;
 			}
 			catch (std::exception &e) {
