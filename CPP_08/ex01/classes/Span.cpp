@@ -50,6 +50,7 @@ unsigned int Span::shortestSpan() const {
 		throw InsufficientElements();
 		
 	std::vector<int> copy(this->_vector);
+	std::sort(copy.begin(), copy.end()); 
 
 	unsigned int shortest = UINT_MAX;
 	
