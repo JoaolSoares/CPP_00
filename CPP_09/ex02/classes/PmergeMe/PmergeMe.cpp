@@ -66,8 +66,45 @@ static void swap(T& a, T& b) {
     b = tmp;
 }
 
+static int jacobsthal(int n) {
+    if (n == 0 || n == 1)
+        return n;
+	else
+        return jacobsthal(n - 1) + 2 * jacobsthal(n - 2);
+}
+
+static std::vector<int>	getInsertionSequence(size_t pendSize) {
+	int		n = 0;
+	size_t	result;
+	size_t	prevResult;
+	size_t	aux;
+	std::vector<int> insertionSequence;
+
+	result = jacobsthal(n);
+	prevResult = result;
+	while (1) {
+		++n;
+		prevResult = result;
+		result = jacobsthal(n);
+		aux = result;
+
+		while (aux > prevResult) {
+			while (aux > pendSize) {
+				--aux;
+			}
+			insertionSequence.push_back(aux);
+			if (aux == pendSize) {
+				while (aux - 1 > prevResult)
+					insertionSequence.push_back(--aux);
+				return (insertionSequence);
+			}
+			--aux;
+		}
+	}
+}
+
 static PmergeMe::vec_group_iterator v_partition(PmergeMe::vec_group_iterator left, PmergeMe::vec_group_iterator right) {
-	int							pivot	= left->bigger; 
+	int								pivot	= left->bigger; 
 	PmergeMe::vec_group_iterator	i		= left;
 
 	for (PmergeMe::vec_group_iterator j = left + 1; j <= right; j++) {
@@ -111,8 +148,10 @@ static void v_insertionSort(std::vector<int> *vec, int num) {
 }
 
 static void v_sortChainPend(std::vector<int> *chain, std::vector<int> pend, int odd) {
-	for (size_t i = 0; i < pend.size(); i++) {
-		v_insertionSort(chain, pend[i]);
+	std::vector<int> insertionSequence = getInsertionSequence(pend.size());
+
+	for (size_t i = 0; i < insertionSequence.size(); i++) {
+		v_insertionSort(chain, pend[insertionSequence[i]]);
 	}
 	if (odd > 0)
 		v_insertionSort(chain, odd);
@@ -172,8 +211,9 @@ static std::deque<s_d_group> d_parseInGroups(std::deque<int> vec) {
 }
 
 static void d_sortInsideGroups(std::deque<s_d_group> *deq) {
-	for (PmergeMe::deq_group_iterator it = deq->begin(); it != deq->end(); it++) {
-		if (it != deq->end() || it + 1 != deq->end()) {
+	PmergeMe::deq_group_iterator it = deq->begin();
+	for (size_t i = 1; it != deq->end(); i++) {
+		if (it + 1 != deq->end()) {
 			if (it->bigger > (it + 1)->bigger) {
 				it->members.push_front((it + 1)->members[0]);
 				deq->erase(it + 1);
@@ -183,8 +223,7 @@ static void d_sortInsideGroups(std::deque<s_d_group> *deq) {
 				it->bigger = (it + 1)->bigger;
 				deq->erase(it + 1);
 			}
-			if (it + 1 != deq->end())
-				it++;
+			it = deq->begin() + i;
 		}
 		else
 			break;
@@ -237,8 +276,10 @@ static void d_insertionSort(std::deque<int> *deq, int num) {
 }
 
 static void d_sortChainPend(std::deque<int> *chain, std::deque<int> pend, int odd) {
-	for (size_t i = 0; i < pend.size(); i++) {
-		d_insertionSort(chain, pend[i]);
+	std::vector<int> insertionSequence = getInsertionSequence(pend.size());
+
+	for (size_t i = 0; i < insertionSequence.size(); i++) {
+		d_insertionSort(chain, pend[insertionSequence[i]]);
 	}
 	if (odd > 0)
 		d_insertionSort(chain, odd);
@@ -278,22 +319,3 @@ std::deque<int>	PmergeMe::dequeSort(std::deque<int> deqToSort) {
 
 	return (sortDeq);
 }
-
-
-
-
-			// if (it->members.size() == (it + 1)->members.size() && (it + 1) != deq->end() - 1) {
-			// 	if (it->bigger > (it + 1)->bigger) {
-			// 		it->members.insert(it->members.begin(), (it + 1)->members.begin(), (it + 1)->members.end());
-			// 		deq->erase(it + 1);
-			// 	}
-			// 	else {
-			// 		it->members.insert(it->members.end(), (it + 1)->members.begin(), (it + 1)->members.end());
-			// 		it->bigger = (it + 1)->bigger;
-			// 		deq->erase(it + 1);
-			// 	}
-			// }
-			// else {
-			// 	it->members.insert(it->members.end(), (it + 1)->members.begin(), (it + 1)->members.end());
-			// 	deq->erase(it + 1);
-			// }
