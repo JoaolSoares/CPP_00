@@ -151,7 +151,7 @@ static void v_sortChainPend(std::vector<int> *chain, std::vector<int> pend, int 
 	std::vector<int> insertionSequence = getInsertionSequence(pend.size());
 
 	for (size_t i = 0; i < insertionSequence.size(); i++) {
-		v_insertionSort(chain, pend[insertionSequence[i]]);
+		v_insertionSort(chain, pend[insertionSequence[i] - 1]);
 	}
 	if (odd > 0)
 		v_insertionSort(chain, odd);
@@ -279,7 +279,7 @@ static void d_sortChainPend(std::deque<int> *chain, std::deque<int> pend, int od
 	std::vector<int> insertionSequence = getInsertionSequence(pend.size());
 
 	for (size_t i = 0; i < insertionSequence.size(); i++) {
-		d_insertionSort(chain, pend[insertionSequence[i]]);
+		d_insertionSort(chain, pend[insertionSequence[i] - 1]);
 	}
 	if (odd > 0)
 		d_insertionSort(chain, odd);
